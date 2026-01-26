@@ -19,10 +19,10 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from api.views import BookList
 
-router = DefaultRouter()
-router.register(r'my-models', BookList)
+api = DefaultRouter()
+api.register(r'my-models', BookList)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-	path('api/', include(router.urls))
+	path('api/', include(api.urls))
 ]
